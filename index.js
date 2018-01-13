@@ -51,7 +51,6 @@ exports.getLogger = function getLogger(fileName) {
   let instance;
   if (!_loggerInstances[category]) {
     instance = Object.freeze(new Logger(category));
-    console.log('ins', instance.info);
   }
   _loggerInstances[category] = instance;
   return instance;
