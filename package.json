@@ -1,14 +1,14 @@
 {
-  "name": "LiLLoggerUtil",
-  "version": "0.0.1",
-  "description": "LiLLoggerUtil",
+  "name": "lil-logger",
+  "version": "0.0.0",
+  "description": "logger util",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/saggiyogesh/LiLLoggerUtil.git"
+    "url": "git+https://github.com/saggiyogesh/lil-logger.git"
   },
   "author": "Yogesh Agarwal",
   "license": "ISC",
