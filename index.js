@@ -41,8 +41,8 @@ class Logger {
     return this._log('DEBUG', msg, args1, args2, args3, args4, args5, args6, args7, args8);
   }
 
-  error(msg) {
-    return pino.error(msg);
+  error(err) {
+    return pino.error(err);
   }
 }
 
