@@ -3,9 +3,12 @@ const { NODE_ENV, PROD_PRINT_TIMESTAMP = false } = process.env;
 const { join, relative } = path;
 
 const isProd = (NODE_ENV === 'production');
-
+let printTimestamp = true;
+if (isProd) {
+  printTimestamp = PROD_PRINT_TIMESTAMP;
+}
 const pino = require('pino')({
-  timestamp: PROD_PRINT_TIMESTAMP,
+  timestamp: printTimestamp,
   prettyPrint: !isProd,
   level: 'debug'
 });
