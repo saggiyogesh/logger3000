@@ -4,7 +4,8 @@
   "description": "logger util",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "eslint *.js",
+    "test": "npm run lint"
   },
   "repository": {
     "type": "git",
@@ -13,6 +14,25 @@
   "author": "Yogesh Agarwal",
   "license": "ISC",
   "dependencies": {
-    "pino": "^4.10.3"
+    "pino": "^5.11.1",
+    "pino-pretty": "^2.5.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.13.0",
+    "eslint-config-lil": "^1.0.4",
+    "eslint-config-prettier": "^4.0.0",
+    "eslint-config-xo-space": "^0.21.0",
+    "eslint-plugin-prettier": "^3.0.1",
+    "prettier": "^1.13.4"
+  },
+  "eslintConfig": {
+    "extends": [
+      "lil"
+    ]
+  },
+  "prettier": {
+    "printWidth": 120,
+    "singleQuote": true
   }
 }
