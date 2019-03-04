@@ -13,6 +13,7 @@
   "author": "Yogesh Agarwal",
   "license": "ISC",
   "dependencies": {
-    "pino": "^4.10.3"
+    "pino": "^5.11.1",
+    "pino-pretty": "^2.5.0"
   }
 }
