@@ -8,6 +8,7 @@ let printTimestamp = true;
 if (isProd) {
   printTimestamp = PROD_PRINT_TIMESTAMP;
 }
+
 const pinoOpts = {
   timestamp: printTimestamp,
   level: 'debug'
@@ -19,20 +20,22 @@ if (!isProd) {
     errorProps: '*'
   };
 }
+
 const pino = require('pino')(pinoOpts);
 
 pino.INFO = pino.info;
 pino.DEBUG = pino.debug;
 pino.ERROR = pino.error;
 
-let _devDir = 'src',
-  _prodDir = 'dist';
+let _devDir = 'src';
+let _prodDir = 'dist';
 
 function toCategory(fileName) {
   const args = [process.cwd()];
   if (isProd) {
     args.push(_prodDir);
   }
+
   args.push(_devDir);
 
   return relative(join.apply(path, args), fileName);
@@ -53,8 +56,9 @@ class Logger {
     msg = this._getMsg(level, msg);
 
     const logArgs = [{ arg1, arg2, arg3, arg4, arg5, arg6, lvl: level }, msg];
-    pino[level].apply(pino, logArgs);
+    pino[level](...logArgs);
   }
+
   /**
    * Usage:
    *    `Log.info({ msg: 'Activity done', arg1: { user: 'abc', flag: true }, arg2: 60 });`
@@ -139,12 +143,13 @@ class Logger {
   }
 }
 
-exports.getLogger = function getLogger(fileName) {
+exports.getLogger = fileName => {
   const category = toCategory(fileName);
   let instance;
   if (!_loggerInstances[category]) {
     instance = Object.freeze(new Logger(category));
   }
+
   _loggerInstances[category] = instance;
   return instance;
 };
@@ -154,7 +159,7 @@ exports.getLogger = function getLogger(fileName) {
  * @param {String} devDir - source dir name for dev usage. Default: `src`
  * @param {String} prodDir - build dir name for prod usage. Default: `dist`
  */
-exports.setDirs = function setDirs(devDir, prodDir) {
+exports.setDirs = (devDir, prodDir) => {
   _devDir = devDir;
   _prodDir = prodDir;
 };
