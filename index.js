@@ -1,4 +1,5 @@
 const path = require('path');
+const assert = require('assert');
 const { NODE_ENV, PROD_PRINT_TIMESTAMP = false } = process.env;
 const { join, relative } = path;
 
@@ -128,6 +129,7 @@ class Logger {
    * @memberof Logger
    */
   error({ error, msg, arg1, arg2, arg3, arg4 }) {
+    assert(error, 'Error instance not exists.');
     msg = this._getMsg('ERROR', msg);
     arg1 && (error.arg1 = arg1);
     arg2 && (error.arg2 = arg2);
