@@ -4,7 +4,8 @@
   "description": "logger util",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint *.js"
+    "lint": "eslint *.js",
+    "test": "npm run lint"
   },
   "repository": {
     "type": "git",
