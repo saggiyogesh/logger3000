@@ -2,6 +2,7 @@
   "name": "lil-logger",
   "version": "2.1.0",
   "description": "logger util",
+  "private": true,
   "main": "index.js",
   "scripts": {
     "lint": "eslint *.js",
