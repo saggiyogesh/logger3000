@@ -2,7 +2,6 @@
   "name": "lil-logger",
   "version": "2.2.1",
   "description": "logger util",
-  "private": true,
   "main": "index.js",
   "scripts": {
     "lint": "eslint *.js",
@@ -15,6 +14,7 @@
   "author": "Yogesh Agarwal",
   "license": "ISC",
   "dependencies": {
+    "np": "^5.0.3",
     "pino": "^5.12.6",
     "pino-pretty": "^3.2.0"
   },
