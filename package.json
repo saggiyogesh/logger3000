@@ -14,8 +14,9 @@
   "author": "Yogesh Agarwal",
   "license": "ISC",
   "dependencies": {
-    "np": "^5.0.3",
-    "pino": "^5.12.6",
+    "pino": "^5.12.6"
+  },
+  "peerDependencies": {
     "pino-pretty": "^3.2.0"
   },
   "devDependencies": {
