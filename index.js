@@ -129,7 +129,6 @@ class Logger {
    * @param {*} [log.arg2] - Extra log param
    * @param {*} [log.arg3] - Extra log param
    * @param {*} [log.arg4] - Extra log param
-   * @returns
    * @memberof Logger
    */
   error({ error, msg, arg1, arg2, arg3, arg4 }) {
