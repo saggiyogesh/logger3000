@@ -132,7 +132,7 @@ class Logger {
    * @memberof Logger
    */
   error({ error, msg, arg1, arg2, arg3, arg4 }) {
-    assert(error, 'Error instance not exists.');
+    // assert(error, 'Error instance not exists.');
     msg = this._getMsg('ERROR', msg);
     arg1 && (error.arg1 = arg1);
     arg2 && (error.arg2 = arg2);
