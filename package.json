@@ -15,7 +15,7 @@
   "license": "ISC",
   "dependencies": {
     "pino": "^6.3.2",
-    "pino-pretty": "^4.0.0"
+    "pino-pretty": "^5.0.0"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
