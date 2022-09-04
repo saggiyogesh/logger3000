@@ -34,7 +34,7 @@ pino.ERROR = pino.error;
 let _devDir = 'src';
 let _prodDir = 'dist';
 
-function toCategory(fileName) {
+function toCategory (fileName) {
   const args = [process.cwd()];
   if (isProd) {
     args.push(_prodDir);
@@ -48,15 +48,15 @@ function toCategory(fileName) {
 const _loggerInstances = {};
 
 class Logger {
-  constructor(category) {
+  constructor (category) {
     this.category = category;
   }
 
-  _getMsg(level, msg) {
+  _getMsg (level, msg) {
     return [level, this.category, msg].join(' - ');
   }
 
-  _log(level, msg = '', arg1, arg2, arg3, arg4, arg5, arg6) {
+  _log (level, msg = '', arg1, arg2, arg3, arg4, arg5, arg6) {
     msg = this._getMsg(level, msg);
 
     const logArgs = [{ arg1, arg2, arg3, arg4, arg5, arg6, lvl: level }, msg];
@@ -82,7 +82,7 @@ class Logger {
    * @param {*} [log.arg6] - Extra log param
    * @memberof Logger
    */
-  info({ msg, arg1, arg2, arg3, arg4, arg5, arg6 }) {
+  info ({ msg, arg1, arg2, arg3, arg4, arg5, arg6 }) {
     this._log('INFO', msg, arg1, arg2, arg3, arg4, arg5, arg6);
   }
 
@@ -106,7 +106,7 @@ class Logger {
    * @param {*} [log.arg6] - Extra log param
    * @memberof Logger
    */
-  debug({ msg, arg1, arg2, arg3, arg4, arg5, arg6 }) {
+  debug ({ msg, arg1, arg2, arg3, arg4, arg5, arg6 }) {
     this._log('DEBUG', msg, arg1, arg2, arg3, arg4, arg5, arg6);
   }
 
@@ -135,7 +135,7 @@ class Logger {
    * @param {*} [log.arg4] - Extra log param
    * @memberof Logger
    */
-  error({ error, msg, arg1, arg2, arg3, arg4 }) {
+  error ({ error, msg, arg1, arg2, arg3, arg4 }) {
     assert(error, 'Error instance not exists.');
     msg = this._getMsg('ERROR', msg);
     arg1 && (error.arg1 = arg1);
