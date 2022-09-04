@@ -16,9 +16,12 @@ const pinoOpts = {
 };
 
 if (!isProd) {
-  pinoOpts.prettyPrint = {
-    translateTime: 'SYS:standard',
-    errorProps: '*'
+  pinoOpts.transport = {
+    target: 'pino-pretty',
+    options: {
+      translateTime: 'SYS:standard',
+      errorProps: '*'
+    }
   };
 }
 

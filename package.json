@@ -4,7 +4,7 @@
   "description": "logger util",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint *.js",
+    "lint": "npx semistandard --fix",
     "test": "npm run lint"
   },
   "repository": {
@@ -14,25 +14,10 @@
   "author": "Yogesh Agarwal",
   "license": "ISC",
   "dependencies": {
-    "pino": "^6.3.2",
-    "pino-pretty": "^4.0.0"
+    "pino": "^8.4.2",
+    "pino-pretty": "^9.1.0"
   },
   "devDependencies": {
-    "babel-eslint": "^10.1.0",
-    "eslint": "^7.2.0",
-    "eslint-config-lil": "^1.0.6",
-    "eslint-config-prettier": "^6.11.0",
-    "eslint-config-xo-space": "^0.25.0",
-    "eslint-plugin-prettier": "^3.1.3",
-    "prettier": "^2.0.5"
-  },
-  "eslintConfig": {
-    "extends": [
-      "lil"
-    ]
-  },
-  "prettier": {
-    "printWidth": 120,
-    "singleQuote": true
+    "semistandard": "^16.0.1"
   }
 }
