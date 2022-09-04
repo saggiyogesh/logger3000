@@ -1,4 +1,5 @@
 const path = require('path');
+const { fileURLToPath } = require('url');
 const assert = require('assert');
 const { NODE_ENV, PROD_PRINT_TIMESTAMP = false } = process.env;
 const { join, relative } = path;
@@ -153,6 +154,17 @@ exports.getLogger = fileName => {
   return instance;
 };
 
+exports.getLoggerESM = (importMetaURL) => {
+  const fileName = fileURLToPath(importMetaURL);
+  const category = toCategory(fileName);
+  let instance;
+  if (!_loggerInstances[category]) {
+    instance = Object.freeze(new Logger(category));
+  }
+
+  _loggerInstances[category] = instance;
+  return instance;
+};
 /**
  * Configure dev & prod dirs for logging.
  * @param {String} devDir - source dir name for dev usage. Default: `src`
