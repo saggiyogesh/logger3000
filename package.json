@@ -1,6 +1,6 @@
 {
   "name": "logger3000",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "logger util",
   "main": "index.js",
   "scripts": {
@@ -14,8 +14,8 @@
   "author": "Yogesh Agarwal",
   "license": "ISC",
   "dependencies": {
-    "pino": "^8.4.2",
-    "pino-pretty": "^9.1.0"
+    "pino": "^8.11.0",
+    "pino-pretty": "^10.0.0"
   },
   "devDependencies": {
     "semistandard": "^16.0.1"
