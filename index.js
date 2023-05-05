@@ -74,7 +74,7 @@ class Logger {
    *
    * @param {Object} log - Info log object
    * @param {String} log.msg - Message to print in logs
-   * @param {*} log.arg1 - Extra log param
+   * @param {*} [log.arg1] - Extra log param
    * @param {*} [log.arg2] - Extra log param
    * @param {*} [log.arg3] - Extra log param
    * @param {*} [log.arg4] - Extra log param
@@ -98,7 +98,7 @@ class Logger {
    *
    * @param {Object} log - Debug log object
    * @param {String} log.msg - Message to print in logs
-   * @param {*} log.arg1 - Extra log param
+   * @param {*} [log.arg1] - Extra log param
    * @param {*} [log.arg2] - Extra log param
    * @param {*} [log.arg3] - Extra log param
    * @param {*} [log.arg4] - Extra log param

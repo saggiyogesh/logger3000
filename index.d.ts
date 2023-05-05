@@ -17,7 +17,7 @@ declare class Logger {
      *
      * @param {Object} log - Info log object
      * @param {String} log.msg - Message to print in logs
-     * @param {*} log.arg1 - Extra log param
+     * @param {*} [log.arg1] - Extra log param
      * @param {*} [log.arg2] - Extra log param
      * @param {*} [log.arg3] - Extra log param
      * @param {*} [log.arg4] - Extra log param
@@ -27,7 +27,7 @@ declare class Logger {
      */
     info({ msg, arg1, arg2, arg3, arg4, arg5, arg6 }: {
         msg: string;
-        arg1: any;
+        arg1?: any;
         arg2?: any;
         arg3?: any;
         arg4?: any;
@@ -46,7 +46,7 @@ declare class Logger {
      *
      * @param {Object} log - Debug log object
      * @param {String} log.msg - Message to print in logs
-     * @param {*} log.arg1 - Extra log param
+     * @param {*} [log.arg1] - Extra log param
      * @param {*} [log.arg2] - Extra log param
      * @param {*} [log.arg3] - Extra log param
      * @param {*} [log.arg4] - Extra log param
@@ -56,7 +56,7 @@ declare class Logger {
      */
     debug({ msg, arg1, arg2, arg3, arg4, arg5, arg6 }: {
         msg: string;
-        arg1: any;
+        arg1?: any;
         arg2?: any;
         arg3?: any;
         arg4?: any;
